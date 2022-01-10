@@ -246,14 +246,13 @@ boxrule=2pt,arc=0pt,boxsep=2pt,left=2pt,right=2pt,top=2pt,bottom=2pt}
 
 \newcommand{\bio}[1]{\def\@bio{#1}}
 
-\newcommand{\namefont}{\bfseries\fontsize{24}{24}\mdseries}
+\newcommand{\namefont}{\bfseries\fontsize{20}{20}\mdseries}
 
 \newcommand{\makecvheader}{%
   \begingroup
     \raggedright\color{accent_body}%
     {\namefont{\color{accent_body}\@firstname} {\color{accent_body}\@familyname}\par}
     \medskip
-    {\large\itshape\color{secondary_body}\@tagline\par}
 
     \ifstrequal{\@bio}{}{}{
     %   \medskip
