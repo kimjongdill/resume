@@ -1,0 +1,182 @@
+%%%%%%%%%%%%%%%%%
+% This is an sample CV template created using maltacv.cls
+% (May 2020) written by Riccardo Mancini, based on the 
+% AltaCV template by LianTze Lim (liantze@gmail.com).
+%
+%% It may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2003/12/01 or later.
+%%%%%%%%%%%%%%%%
+
+%% If you need to pass whatever options to xcolor
+\PassOptionsToPackage{dvipsnames}{xcolor}
+
+%% If you are using \orcid or academicons
+%% icons, make sure you have the academicons
+%% option here, and compile with XeLaTeX
+%% or LuaLaTeX.
+% \documentclass[10pt,a4paper,academicons]{altacv}
+
+\documentclass[10pt,letter,ragged2e]{maltacv}
+
+%% AltaCV uses the fontawesome and academicon fonts
+%% and packages.
+%% See texdoc.net/pkg/fontawecome and http://texdoc.net/pkg/academicons for full list of symbols. You MUST compile with XeLaTeX or LuaLaTeX if you want to use academicons.
+
+% Change the font if you want to
+% If using pdflatex:
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+% \usepackage[default]{lato}
+\usepackage{tgheros}
+\renewcommand*\familydefault{\sfdefault} %% Only if the base font of the document is to be sans serif
+
+\usepackage{setspace}
+
+\usepackage{mathpazo}
+\usepackage{textcomp}
+\usepackage{multicol}
+
+% Color schemes:
+% raisinblack_flame
+% darkpurple_princetonorange
+% blue_claret
+% eerieblack_eggplant
+% outerspace_forestgreen   
+% raisinblack_midnightgreen
+% teal_brown
+% indigo
+% blue
+% violet
+% you can set your custom colors with:
+% \definecolor{AccentBody}{HTML}{002642}
+% \definecolor{Primary}{HTML}{840032}
+% \colorlet{primary}{Primary}
+% \colorlet{accent_body}{AccentBody}
+
+% this is my favourite but change it as you like
+\setcolorscheme{raisinblack_flame}
+\setlength\multicolsep{0pt}
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\itemmarker}{{\small\textbullet}}
+
+%% sample.bib contains your publications
+%% NOT SUPPORTED YET
+% \addbibresource{sample.bib}
+
+\name{George Dill}
+\firstname{George}
+\familyname{Dill}
+
+\begin{document}
+\tagline{Software Engineer}
+\personalinfo{%
+  % Not all of these are required!
+  % You can add your own with \printinfo{symbol}{detail}
+  \email{george.a.dill@gmail.com}
+  % \birthday{25\textsuperscript{th} Dec 0}
+  % \homepage{www.homepage.com/}
+  % \twitter{@twitterhandle}
+  \linkedin{georgedill}
+  \github{kimjongdill}
+  \phone{(773) 240 6809}
+  % \mailaddress{lorem ipsum, dolor, sit, AM, 57846}
+  \location{Chicago, IL}
+  %% You MUST add the academicons option to \documentclass, then compile with LuaLaTeX or XeLaTeX, if you want to use \orcid or other academicons commands.
+  % \orcid{orcid.org/0000-0000-0000-0000}
+}
+
+\makecvheader
+
+\cvsection{Skills}
+\begin{center}
+  \begin{multicols}{5} % adjust #cols as needed
+    \cvlistitem{JavaScript}{Node, React}
+    \cvlistitem{C\#}{Dotnet MVC, EF}
+    \cvlistitem{Java}{Spring Boot}
+    \cvlistitem{DevOps}{K8s, Docker, CI/CD}
+  \end{multicols}
+\end{center}
+
+% put Experience before Education if you are no longer a student
+\cvsection{Experience}
+\cvcompany{Nvisia}{Chicago, IL}
+\cvtitle{Technical Lead}{Nov 2021 -- Present}
+\cvtitle{Software Engineer}{Feb 2020 -- Nov 2021}
+\smallskip
+\textit{Nvisia is a mid-size software consultancy developing business solutions for the enterprise communities in Chicago, IL and Milwaukee, WI. I am working 
+    on engineering teams at Echo Global Logistics, a freight brokerage nearing \$4 Billion in revenue in 2021.}\par
+\smallskip
+\begin{itemize}
+  \item Enabled continuous deployment and reduced build time by 20 minutes of Echo's Transportation Management System single page app 
+    by porting it to a microfrontend architecture. 
+  \item Designed Echo's first fully automated cloud deployment for a single page application using 
+    AWS cloud objects including S3, Cloudfront, Cloudfront Functions, Certificate Manager, and Terraform. 
+  \item Maintained a portable local development environment using Skaffold for 
+    automated deployments to K8s, Kustomize for managing environment specific 
+    variables, and lightweight mocks using node.JS and fastify. 
+  \item Programmed an event-driven data persistence layer using the CQRS pattern in 
+    C\# with commands consumed from rabbitMQ, an MS-SQL write store and 
+    Elasticsearch read store.
+\end{itemize}
+\cvkeyword{React.JS, Node.JS, C\#, Dotnet Core, Dotnet MVC, MS-SQL, AWS, Terraform}
+\divider
+
+\cvcompany{University of Illinois at Chicago}{Chicago, IL}
+\cvtitle{Research Assistant}{May 2019 -- Dec 2019}
+\smallskip
+\begin{itemize}
+  \item Refactored the delegation system described in \href{https://www.cs.uic.edu/~jakob/papers/sosp17_techrep_draft.pdf}{"ffwd: delegation is (much) faster than you think"} to handle asynchronous jobs.
+  \item Using the Intel developers guide and modeling the cache hierarchy, increased throughput of "ffwd" on microbenchmarks by 18\%
+  \item Wrote BASH scripts to run trials, parsed output with Awk and Sed, and displayed results with Gnuplot.
+  \item Published results as a Masters Thesis: \href{https://indigo.uic.edu/articles/thesis/Asynchronous_Delegation_and_Applications/12481784}{Asynchronous Delegation and its Applications}. 
+\end{itemize}
+\cvkeyword{C, C++, Delegation, X86-64, Intel, BASH}
+
+\divider
+
+\cvcompany{Amazon}{Seattle, WA}
+\cvtitle{Software Engineer Intern}{Summer 2018}
+\smallskip
+\begin{itemize}
+  \item Refactored a Java application to pass data in key-value pairs through a series of micro-services implemented on AWS lambda, SQS, and EC2.
+\end{itemize}
+\cvkeyword{Java, AWS}
+%Projects
+% - Newspaper E-Ink Display
+% - Remote Control Air Conditioner
+
+\divider
+
+\cvsection{Certifications and Awards}
+\medskip
+\begin{itemize}
+  \item AWS Certified Solutions Architect
+  \item Disciplined Agile Senior Scrum Master
+  \item Excellent TA Award
+  \item Winner - Built Worlds Hackathon 2017
+\end{itemize}
+
+\medskip
+\cvsection{Education}
+\medskip
+\begin{multicols}{2}
+
+  \cvuniversity{M.Sc. Computer Science}{University of Illinois at Chicago}{December 2019}{}% last param is location
+  % this helps if columns are not the same
+  \vfill\null
+  \columnbreak
+
+  \cvuniversity{B.Sc. Civil Engineering}{Purdue University}{May 2008}{West Lafayette, IN}
+  \vfill\null
+
+\end{multicols}
+
+
+\end{document}
